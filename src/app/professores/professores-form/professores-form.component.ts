@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Professor } from '../professor';
+import { ProfessoresService } from 'src/app/professores.service';
 
 @Component({
   selector: 'app-professores-form',
@@ -9,19 +10,27 @@ import { Professor } from '../professor';
 export class ProfessoresFormComponent implements OnInit {
 
   professor: Professor;
-  success: boolean;
-  error:boolean;
+  success: boolean = false;
+  errors: string[];
 
 
-  constructor() {
+  constructor( private service: ProfessoresService ) {
     this.professor = new Professor();
   }
 
   ngOnInit(): void {
   }
 
-  clicar(){
-    console.log(this.professor)
+  onSubmit(){
+    this.service.salvar(this.professor)
+      .subscribe( response => {
+        this.success = true;
+        this.errors = null;
+        this.professor = response;
+      } ,errorResponse =>{
+        this.success = false;
+        this.errors = errorResponse.error.errors;
+      })
   }
 
 }

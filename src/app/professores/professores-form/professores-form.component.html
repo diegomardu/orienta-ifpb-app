@@ -3,14 +3,14 @@
   <li class="breadcrumb-item active">Cadastro</li>
 </ol>
 <div class="container">
-  <form #professorForm="ngForm" >
+  <form #professorForm="ngForm" (ngSubmit)="onSubmit()">
      <div class="row">
      <div class="col-md-12">
         <div class="alert alert-success" role="alert" *ngIf="success">
           Professor salvo/atualizado com sucesso!
         </div>
-        <div class="alert alert-danger" role="alert" *ngIf="error">
-
+        <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
+              {{erro}}
         </div>
       </div>
     </div>
@@ -47,7 +47,7 @@
     <br>
     <div class="row">
       <div class="col-md-4">
-        <button type="submit" class="btn btn-success" (click)="clicar()" >
+        <button type="submit" class="btn btn-success">
             <i class="fa fa-save"></i> Salvar
         </button>
         <button type="button" class="btn btn-danger ml-1">
