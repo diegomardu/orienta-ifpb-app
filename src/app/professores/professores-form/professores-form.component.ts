@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Professor } from '../professor';
 import { ProfessoresService } from 'src/app/professores.service';
@@ -14,11 +15,18 @@ export class ProfessoresFormComponent implements OnInit {
   errors: string[];
 
 
-  constructor( private service: ProfessoresService ) {
+  constructor(
+    private service: ProfessoresService,
+    private router: Router
+    ) {
     this.professor = new Professor();
   }
 
   ngOnInit(): void {
+  }
+
+  voltarListaProfessores(){
+    this.router.navigate(['/professores-lista'])
   }
 
   onSubmit(){

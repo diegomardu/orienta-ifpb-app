@@ -15,4 +15,8 @@ export class ProfessoresService {
   salvar( professor: Professor):Observable<Professor>{
     return this.http.post<Professor>('http://localhost:8080/api/professores',professor)
   }
+
+  litarProfessores(): Observable<Professor[]>{
+    return this.http.get<Professor[]>('http://localhost:8080/api/professores');
+  }
 }
