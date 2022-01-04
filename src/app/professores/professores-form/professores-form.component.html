@@ -1,6 +1,6 @@
 <h1 class="mt-4">Professores</h1>
 <ol class="breadcrumb mb-4">
-  <li class="breadcrumb-item active">Cadastro</li>
+  <li class="breadcrumb-item active">{{ professor.id ? 'Edição' : 'Cadastro' }}</li>
 </ol>
 <div class="container">
   <form #professorForm="ngForm" (ngSubmit)="onSubmit()">
@@ -47,9 +47,14 @@
     <br>
     <div class="row">
       <div class="col-md-4">
-        <button type="submit" class="btn btn-success">
+        <button type="submit" class="btn btn-success" *ngIf="!professor.id" >
             <i class="fa fa-save"></i> Salvar
         </button>
+
+        <button type="submit" class="btn btn-primary" *ngIf="professor.id" >
+          <i class="fa fa-sync-alt"></i> Atualizar
+        </button>
+
         <button type="button" class="btn btn-danger ml-1" (click)="voltarListaProfessores()" >
           <i class="fa fa-arrow-circle-left"></i> Voltar
       </button>

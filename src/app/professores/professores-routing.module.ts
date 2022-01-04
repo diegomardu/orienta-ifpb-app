@@ -5,6 +5,7 @@ import { ProfessoresFormComponent } from './professores-form/professores-form.co
 
 const routes: Routes = [
   { path: 'professores-form', component: ProfessoresFormComponent},
+  { path: 'professores-form/:id', component: ProfessoresFormComponent},
   { path: 'professores-lista', component: ProfessoresListaComponent }
 ];
 

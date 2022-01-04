@@ -14,8 +14,8 @@
   <br>
   <div class="row">
     <div class="col-md-12">
-      <table class="table table-condensed table-hover">
-        <thead>
+      <table class="table table-hover table-bordered">
+        <thead class="thead-dark">
           <tr>
             <th>ID</th>
             <th>Nome</th>
@@ -25,10 +25,15 @@
         </thead>
         <tbody>
           <tr *ngFor="let professor of professores">
-            <th>{{ professor.id }}</th>
-            <th>{{ professor.nome }}</th>
-            <th>{{ professor.matricula }}</th>
-            <th></th>
+            <td>{{ professor.id }}</td>
+            <td>{{ professor.nome }}</td>
+            <td>{{ professor.matricula }}</td>
+            <td>
+              <button class="btn btn-primary"
+                routerLink="/professores-form/{{ professor.id }}">
+                <i class="fa fa-edit"></i>
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
