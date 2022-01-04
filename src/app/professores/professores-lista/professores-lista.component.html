@@ -14,8 +14,8 @@
   <br>
   <div class="row">
     <div class="col-md-12">
-      <table class="table table-hover table-bordered">
-        <thead class="thead-dark">
+      <table class="table table-condensed table-hover">
+        <thead>
           <tr>
             <th>ID</th>
             <th>Nome</th>
@@ -33,10 +33,30 @@
                 routerLink="/professores-form/{{ professor.id }}">
                 <i class="fa fa-edit"></i>
               </button>
+              <button class="btn btn-danger ml-1" (click)="preparaDelecao(professor)"
+                data-toggle="modal" data-target="#modalDelecao">
+                <i class="fa fa-trash"></i>
+              </button>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
+    <div id="modalDelecao" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            Confirmação
+          </div>
+          <div class="modal-body" *ngIf="professorSelecionado">
+            Confirma a deleção do(a) professor {{ professorSelecionado.nome }}?
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-success" (click)="deletarProfessor()"
+              data-dismiss="modal">Confirmar</button>
+            <button class="btn btn-default" data-dismiss="modal">Cancelar</button>
+          </div>
+        </div>
+      </div>
   </div>
 </div>

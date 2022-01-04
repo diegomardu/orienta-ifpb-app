@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
 export class ProfessoresListaComponent implements OnInit {
 
   professores: Professor[] = [];
+  professorSelecionado: Professor;
+  mensagemSucesso: String;
+  mensagemErro: String;
 
   constructor(
     private service: ProfessoresService,
@@ -28,6 +31,22 @@ export class ProfessoresListaComponent implements OnInit {
 
   voltarListaProfessores(){
     this.router.navigate(['/professores-lista'])
+  }
+
+  preparaDelecao(professor: Professor){
+    this.professorSelecionado = professor;
+  }
+
+  deletarProfessor(){
+    this.service
+      .deletaProfessorByid(this.professorSelecionado)
+      .subscribe(
+        response => {
+          this.mensagemSucesso = "Cliente deletado com sucesso!"
+          this.ngOnInit();
+        },
+        erro => this.mensagemErro = "Ocorreu um erro ao deletar o cliente"
+      )
   }
 
 }

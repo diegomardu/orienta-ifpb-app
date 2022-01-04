@@ -30,4 +30,8 @@ export class ProfessoresService {
   buscarProfessorPorId(id: number): Observable<Professor>{
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
+
+  deletaProfessorByid(professor: Professor): Observable<any>{
+    return this.http.delete<any>(`${this.apiUrl}/${professor.id}`);
+  }
 }
