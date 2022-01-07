@@ -1,3 +1,4 @@
+import { AlunosService } from './alunos.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -7,7 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { TemplateModule } from './template/template.module';
 import { ProfessoresModule } from './professores/professores.module';
 import { ProfessoresService } from './professores.service';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { AlunosModule } from './alunos/alunos.module';
 
 @NgModule({
   declarations: [
@@ -19,10 +21,12 @@ import { HttpClientModule } from '@angular/common/http'
     AppRoutingModule,
     TemplateModule,
     ProfessoresModule,
-    HttpClientModule
+    HttpClientModule,
+    AlunosModule
   ],
   providers: [
-    ProfessoresService
+    ProfessoresService,
+    AlunosService
   ],
   bootstrap: [AppComponent]
 })
