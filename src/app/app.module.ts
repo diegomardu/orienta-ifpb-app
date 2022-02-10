@@ -10,6 +10,7 @@ import { ProfessoresModule } from './professores/professores.module';
 import { ProfessoresService } from './professores.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AlunosModule } from './alunos/alunos.module';
+import { CadastroTccModule } from './cadastro-tcc/cadastro-tcc.module'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AlunosModule } from './alunos/alunos.module';
     TemplateModule,
     ProfessoresModule,
     HttpClientModule,
-    AlunosModule
+    AlunosModule,
+    CadastroTccModule
   ],
   providers: [
     ProfessoresService,
