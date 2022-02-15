@@ -1,4 +1,4 @@
-<h1 class="mt-4">Cadastrar orientador</h1>
+<h1 class="mt-4">Cadastrar orientação TCC</h1>
 <ol class="breadcrumb mb-4">
   <li class="breadcrumb-item active">Cadastro</li>
 </ol>
@@ -38,14 +38,19 @@
       <div class="col-md-6">
         <div class="form-form-group">
           <label>Status: *</label>
-          <input type="text" class="form-control" name="status">
+          <select class="form-control">
+            <option>Selecione...</option>
+            <option *ngFor="let st of status"> {{ st }} </option>
+          </select>
         </div>
       </div>
       <div class="col-md-12">
         <div class="form-form-group">
           <label>Tipo Curso: *</label>
-          <input type="email" class="form-control"
-            name="tipoCursoOrientacao">
+          <select class="form-control">
+            <option>Selecione...</option>
+            <option *ngFor="let curso of tipoCurso">{{ curso }} </option>
+          </select>
         </div>
       </div>
       <div class="col-md-12">
@@ -72,21 +77,16 @@
       </div>
     </div>
     <br>
-    <!--<div class="row">
+    <div class="row">
       <div class="col-md-4">
-        <button type="submit" class="btn btn-success" *ngIf="!aluno.id" >
+        <button type="submit" class="btn btn-success" >
             <i class="fa fa-save"></i> Salvar
         </button>
-
-        <button type="submit" class="btn btn-primary" *ngIf="aluno.id">
-          <i class="fa fa-sync-alt"></i> Atualizar
-        </button>
-
-        <button type="button" class="btn btn-danger ml-1" (click)="voltarListaAlunos()">
+        <button type="button" class="btn btn-danger ml-1" (click)="voltarListaOrientacoes()">
           <i class="fa fa-arrow-circle-left"></i> Voltar
       </button>
       </div>
-    </div>-->
+    </div>
   </form>
 </div>
 
