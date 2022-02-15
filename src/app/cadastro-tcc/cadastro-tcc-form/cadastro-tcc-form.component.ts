@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Professor } from './../../professores/professor';
 import { Aluno } from './../../alunos/aluno';
 import { Component, OnInit } from '@angular/core';
@@ -13,10 +14,13 @@ export class CadastroTccFormComponent implements OnInit {
 
   alunos: Aluno[] =[];
   professores: Professor[] = [];
+  status: string[] = ["Em andamento", "Concluido"]
+  tipoCurso: string[] = ["Técnico","Graduação","Especialização","Mestrado","Doutorado"]
 
   constructor(
     private alunosService: AlunosService,
-    private professoresService: ProfessoresService
+    private professoresService: ProfessoresService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -27,6 +31,14 @@ export class CadastroTccFormComponent implements OnInit {
     this.professoresService
       .litarProfessores()
       .subscribe( response => this.professores = response);
+  }
+
+  voltarListaOrientacoes(){
+    this.router.navigate(['/cadastro-tcc-lista'])
+  }
+
+  onSubmit(){
+
   }
 
 }
