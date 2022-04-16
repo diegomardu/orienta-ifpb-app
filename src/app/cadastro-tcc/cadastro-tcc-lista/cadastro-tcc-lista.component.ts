@@ -1,3 +1,5 @@
+import { CadastroTcc } from '../../cadastro-tcc/cadastroTcc'
+import { CadastroTccService } from './../../cadastro-tcc.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,11 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroTccListaComponent implements OnInit {
 
+  cadastro: CadastroTcc[] = [];
+
   constructor(
-    private router: Router
+    private router: Router,
+    private service: CadastroTccService
   ) { }
 
   ngOnInit(): void {
+    this.service
+      .listarTrabalhosCadastrado()
+      .subscribe(response => this.cadastro = response);
+      console.log(this.cadastro)
   }
 
   cadastrarNovo(){

@@ -1,4 +1,4 @@
-<h3 class="mt-4">Lista de Orientações</h3>
+<h1 class="mt-4">Lista de Orientações</h1>
 <ol class="breadcrumb mb-4">
   <li class="breadcrumb-item active">Consulta</li>
 </ol>
@@ -26,10 +26,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+          <tr *ngFor="let cad of cadastro">
+            <td>{{ cad.id }}</td>
+            <td>{{cad.idProfessor}}</td>
+            <td>{{cad.idAluno}}</td>
+            <td>{{cad.status}}</td>
+            <td>{{cad.curso}}</td>
            <!--<td>
               <button class="btn btn-primary"
                 routerLink="/alunos-form/">
