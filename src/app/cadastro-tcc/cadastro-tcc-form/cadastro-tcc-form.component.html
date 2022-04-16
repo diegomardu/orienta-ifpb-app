@@ -3,61 +3,64 @@
   <li class="breadcrumb-item active">Cadastro</li>
 </ol>
 <div class="container">
-  <form #professorForm="ngForm">
+  <form #cadastroForm="ngForm" (ngSubmit)="onSubimit()" >
      <div class="row">
-    <!--<div class="col-md-12">
+    <div class="col-md-12">
           <div class="alert alert-success" role="alert" *ngIf="success">
-            Aluno salvo/atualizado com sucesso!
+            Orientação Cadastrada com Sucesso.
           </div>
           <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
                 {{erro}}
           </div>
-      </div>-->
+      </div>
     </div>
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
           <label>Carga Horaria: *</label>
-          <input type="text" class="form-control" name="cargaHoraria"  >
+          <input type="text" class="form-control" [(ngModel)]="cadastro.cargaHoraria"
+            name="cargaHoraria"  >
         </div>
       </div>
 
       <div class="col-md-6">
         <div class="form-form-group">
           <label>Curso: *</label>
-          <input type="text" class="form-control" name="curso">
+          <input type="text" class="form-control" [(ngModel)]="cadastro.curso"
+           name="curso">
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-form-group">
           <label>Periodo Letivo: *</label>
-          <input type="text" class="form-control"
+          <input type="text" class="form-control" [(ngModel)]="cadastro.periodoLetivo"
             name="periodoLetivo">
         </div>
       </div>
       <div class="col-md-6">
-        <div class="form-form-group">
+        <div class="form-form-group" >
           <label>Status: *</label>
-          <select class="form-control">
-            <option>Selecione...</option>
-            <option *ngFor="let st of status"> {{ st }} </option>
+          <select class="form-control" [ngModelOptions]="{standalone:true}"
+          [(ngModel)]="cadastro.status">
+            <option *ngFor="let st of status" name="status" > {{ st }} </option>
           </select>
         </div>
       </div>
       <div class="col-md-12">
         <div class="form-form-group">
           <label>Tipo Curso: *</label>
-          <select class="form-control">
-            <option>Selecione...</option>
-            <option *ngFor="let curso of tipoCurso">{{ curso }} </option>
+          <select class="form-control" [ngModelOptions]="{standalone:true}"
+            [(ngModel)]="cadastro.tipoCurso">
+            <option *ngFor="let curso of tipoCursoOrientacao"
+             name="tipoCurso">{{ curso }} </option>
           </select>
         </div>
       </div>
       <div class="col-md-12">
         <div class="form-group">
           <label>Professor: *</label>
-          <select class="form-control">
-            <option>Selecione...</option>
+          <select class="form-control" [ngModelOptions]="{standalone:true}"
+            [(ngModel)]="cadastro.idProfessor">
             <option *ngFor="let professor of professores" [ngValue]="professor.id">
               {{ professor.nome }}
             </option>
@@ -67,8 +70,8 @@
       <div class="col-md-12">
         <div class="form-group">
           <label>Aluno: *</label>
-          <select class="form-control">
-            <option>Selecione...</option>
+          <select class="form-control" [ngModelOptions]="{standalone:true}"
+            [(ngModel)]="cadastro.idAluno">
             <option *ngFor="let aluno of alunos" [ngValue]="aluno.id">
               {{ aluno.nome }}
             </option>

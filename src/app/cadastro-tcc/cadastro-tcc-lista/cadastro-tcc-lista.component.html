@@ -26,10 +26,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+          <tr *ngFor="let cad of cadastro">
+            <td>{{ cad.id }}</td>
+            <td>{{cad.idProfessor}}</td>
+            <td>{{cad.idAluno}}</td>
+            <td>{{cad.status}}</td>
+            <td>{{cad.curso}}</td>
            <!--<td>
               <button class="btn btn-primary"
                 routerLink="/alunos-form/">
