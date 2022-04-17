@@ -45,7 +45,7 @@ export class ProfessoresListaComponent implements OnInit {
           this.mensagemSucesso = "Professor deletado com sucesso!"
           this.ngOnInit();
         },
-        erro => this.mensagemErro = "Ocorreu um erro ao deletar o cliente"
+        erro => this.mensagemErro = "Ocorreu um erro ao deletar o Professor"
       )
   }
 

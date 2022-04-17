@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: 'cadastro-tcc-form', component: CadastroTccFormComponent },
+  { path: 'cadastro-tcc-form/:id', component: CadastroTccFormComponent},
   { path: 'cadastro-tcc-lista', component: CadastroTccListaComponent }
 ];
 

@@ -1,4 +1,4 @@
-<h1 class="mt-4">Cadastrar orientação TCC</h1>
+<h3 class="mt-4">Cadastrar orientação TCC</h3>
 <ol class="breadcrumb mb-4">
   <li class="breadcrumb-item active">Cadastro</li>
 </ol>
@@ -82,9 +82,14 @@
     <br>
     <div class="row">
       <div class="col-md-4">
-        <button type="submit" class="btn btn-success" >
+        <button type="submit" class="btn btn-success" *ngIf="!cadastro.id">
             <i class="fa fa-save"></i> Salvar
         </button>
+
+        <button type="submit" class="btn btn-primary" *ngIf="cadastro.id" >
+          <i class="fa fa-sync-alt"></i> Atualizar
+        </button>
+
         <button type="button" class="btn btn-danger ml-1" (click)="voltarListaOrientacoes()">
           <i class="fa fa-arrow-circle-left"></i> Voltar
       </button>

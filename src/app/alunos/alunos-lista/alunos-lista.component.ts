@@ -42,10 +42,10 @@ export class AlunosListaComponent implements OnInit {
       .deletaAlunoByid(this.alunoSelecionado)
       .subscribe(
         response => {
-          this.mensagemSucesso = "Professor deletado com sucesso!"
+          this.mensagemSucesso = "Aluno deletado com sucesso!"
           this.ngOnInit();
         },
-        erro => this.mensagemErro = "Ocorreu um erro ao deletar o cliente"
+        erro => this.mensagemErro = "Ocorreu um erro ao deletar o Aluno"
       )
   }
 

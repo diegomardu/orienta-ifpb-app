@@ -20,4 +20,12 @@ export class CadastroTccService {
   listarTrabalhosCadastrado(): Observable<CadastroTcc[]>{
     return this.http.get<CadastroTcc[]>(`${this.apiUrl + '/lista'}`)
   }
+
+  buscarTccPorId(id: number): Observable<CadastroTcc>{
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
+
+  atualizar(cadastroTcc: CadastroTcc) : Observable<CadastroTcc>{
+    return this.http.put<any>(`${this.apiUrl}/${cadastroTcc.id}`, cadastroTcc);
+  }
 }

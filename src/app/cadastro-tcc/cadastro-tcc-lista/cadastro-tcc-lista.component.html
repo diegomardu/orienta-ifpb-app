@@ -1,4 +1,4 @@
-<h1 class="mt-4">Lista de Orientações</h1>
+<h3 class="mt-4">Lista de Orientações</h3>
 <ol class="breadcrumb mb-4">
   <li class="breadcrumb-item active">Consulta</li>
 </ol>
@@ -32,12 +32,13 @@
             <td>{{cad.idAluno}}</td>
             <td>{{cad.status}}</td>
             <td>{{cad.curso}}</td>
-           <!--<td>
+            <td>
               <button class="btn btn-primary"
-                routerLink="/alunos-form/">
+                routerLink="/cadastro-tcc-form/{{ cad.id }}">
                 <i class="fa fa-edit"></i>
               </button>
-              <button class="btn btn-danger ml-1"
+            </td>
+            <!--<button class="btn btn-danger ml-1"
                 data-toggle="modal" data-target="#modalDelecao">
                 <i class="fa fa-trash"></i>
               </button>
