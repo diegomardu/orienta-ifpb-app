@@ -26,7 +26,7 @@ export class AlunosListaComponent implements OnInit {
   }
 
   cadastrarNovo(){
-    this.router.navigate(['/alunos-form'])
+    this.router.navigate(['/alunos/form'])
   }
 
   voltarListaAlunos(){

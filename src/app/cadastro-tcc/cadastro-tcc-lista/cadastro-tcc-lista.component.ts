@@ -42,7 +42,7 @@ export class CadastroTccListaComponent implements OnInit {
   }
 
   cadastrarNovo(){
-    this.router.navigate(['/cadastro-tcc-form'])
+    this.router.navigate(['/cadastro-tcc/form'])
   }
 
 }

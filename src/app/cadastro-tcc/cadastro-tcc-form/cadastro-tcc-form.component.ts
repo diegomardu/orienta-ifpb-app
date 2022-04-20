@@ -54,7 +54,7 @@ export class CadastroTccFormComponent implements OnInit {
   }
 
   voltarListaOrientacoes(){
-    this.router.navigate(['/cadastro-tcc-lista'])
+    this.router.navigate(['/cadastro-tcc/lista'])
   }
 
   onSubimit(){

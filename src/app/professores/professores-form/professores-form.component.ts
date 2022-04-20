@@ -37,7 +37,7 @@ export class ProfessoresFormComponent implements OnInit {
   }
 
   voltarListaProfessores(){
-    this.router.navigate(['/professores-lista'])
+    this.router.navigate(['/professores/lista'])
   }
 
   onSubmit(){

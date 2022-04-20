@@ -12,13 +12,15 @@ import { ProfessoresService } from './professores.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AlunosModule } from './alunos/alunos.module';
 import { CadastroTccModule } from './cadastro-tcc/cadastro-tcc.module';
-import { LoginComponent } from './login/login.component'
+import { LoginComponent } from './login/login.component';
+import { LayoutComponent } from './layout/layout.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,

@@ -26,11 +26,11 @@ export class ProfessoresListaComponent implements OnInit {
   }
 
   cadastrarNovo(){
-    this.router.navigate(['/professores-form'])
+    this.router.navigate(['/professores/form'])
   }
 
   voltarListaProfessores(){
-    this.router.navigate(['/professores-lista'])
+    this.router.navigate(['/professores/lista'])
   }
 
   preparaDelecao(professor: Professor){
