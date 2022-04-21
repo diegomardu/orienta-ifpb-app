@@ -11,6 +11,9 @@
                 </h3>
               </div>
               <div class="card-body">
+                <div class="alert alert-success" *ngIf="mensagemSucesso">
+                  {{ mensagemSucesso }}
+                </div>
                 <div class="alert alert-danger" *ngIf="loginError">
                   Login e/ou Senha incorreto(a).
                 </div>
@@ -29,9 +32,16 @@
                       class="form-control py-4"
                       placeholder="Digite sua senha">
                   </div>
+                  <div class="form-group" *ngIf="cadastro">
+                    <label class="small mb-1">Email</label>
+                    <input type="email" name="email"
+                      [(ngModel)]="email"
+                      class="form-control py-4"
+                      placeholder="Informe seu email">
+                  </div>
                   <div class="form-group align-items-center justify-content-between mt-4 mb-0">
                     <button type="submit" class="btn btn-primary" *ngIf="!cadastro">Enviar</button>
-                    <button type="button" class="btn btn-success" *ngIf="cadastro" >Cadastrar</button>
+                    <button type="button" class="btn btn-success" (click)="cadastrar()" *ngIf="cadastro" >Cadastrar</button>
                     <button type="button" class="btn btn-danger ml-1" *ngIf="cadastro" (click)="cancelarCadastro()" >Cancelar</button>
                   </div>
 

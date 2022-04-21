@@ -1,3 +1,5 @@
+import { CadastroTccService } from './cadastro-tcc.service';
+import { AuthService } from './auth.service';
 import { AlunosService } from './alunos.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -34,7 +36,9 @@ import { LayoutComponent } from './layout/layout.component'
   ],
   providers: [
     ProfessoresService,
-    AlunosService
+    AlunosService,
+    AuthService,
+    CadastroTccService
   ],
   bootstrap: [AppComponent]
 })
