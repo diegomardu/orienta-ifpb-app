@@ -5,6 +5,9 @@
 export const environment = {
   production: false,
   apiUrlBase: "http://localhost:8080",
+  clientId: 'orienta-ifpb',
+  clientSecret: '@orientaIfpb*',
+  tokenUrl: '/oauth/token'
 };
 
 /*

@@ -11,11 +11,12 @@ import { HomeComponent } from './home/home.component';
 import { TemplateModule } from './template/template.module';
 import { ProfessoresModule } from './professores/professores.module';
 import { ProfessoresService } from './professores.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AlunosModule } from './alunos/alunos.module';
 import { CadastroTccModule } from './cadastro-tcc/cadastro-tcc.module';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component'
+import { TokenInterceptor } from './token.interceptor';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,12 @@ import { LayoutComponent } from './layout/layout.component'
     ProfessoresService,
     AlunosService,
     AuthService,
-    CadastroTccService
+    CadastroTccService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

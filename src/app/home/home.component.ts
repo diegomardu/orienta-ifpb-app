@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  concluidos: string = '8';
+  andamento: string = '4';
+  trancado: string = '3';
+
   constructor() { }
 
   ngOnInit(): void {

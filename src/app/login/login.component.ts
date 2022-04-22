@@ -13,9 +13,9 @@ export class LoginComponent {
   username: string;
   password: string;
   email: string;
-  loginError: boolean;
   cadastro: boolean;
   mensagemSucesso: string;
+  errors: string[];
 
   constructor(
     private route: Router,
@@ -23,7 +23,16 @@ export class LoginComponent {
   ) { }
 
   onSubmit(){
-    this.route.navigate(['/home'])
+    this.service
+      .tentandoLogar(this.username, this.password)
+      .subscribe( response => {
+        const access_token = JSON.stringify(response);
+        localStorage.setItem('access_token',access_token);
+        console.log(response)
+        this.route.navigate(['/home']);
+      }, errosResponse => {
+        this.errors = ['Usuário ou senha invalidos']
+      })
   }
 
   preparandoCadastro(event){
@@ -44,10 +53,14 @@ export class LoginComponent {
     this.service.salvar(usuario)
       .subscribe(response => {
         this.mensagemSucesso = "Cadastro realizado com sucesso."
-        this.loginError = false;
-      }, error => {
-        this.loginError = true;
+        this.cadastro = false;
+        this.username = '';
+        this.password = '';
+        this.errors = [];
+      }, errorResponse => {
         this.mensagemSucesso = null;
+        this.errors = errorResponse.error.errors;
+
       })
   }
 
