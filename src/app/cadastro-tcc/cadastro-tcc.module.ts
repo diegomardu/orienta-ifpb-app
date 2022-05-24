@@ -11,13 +11,14 @@ import { CadastroTccListaComponent } from './cadastro-tcc-lista/cadastro-tcc-lis
 @NgModule({
   declarations: [
     CadastroTccFormComponent,
-    CadastroTccListaComponent
+    CadastroTccListaComponent,
   ],
   imports: [
     CommonModule,
     CadastroTccRoutingModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+
   ],
   exports: [
     CadastroTccFormComponent,

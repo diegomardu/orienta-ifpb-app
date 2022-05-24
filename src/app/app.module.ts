@@ -17,6 +17,9 @@ import { CadastroTccModule } from './cadastro-tcc/cadastro-tcc.module';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component'
 import { TokenInterceptor } from './token.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { CadastroAtaModule } from './cadastro-ata/cadastro-ata.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { TokenInterceptor } from './token.interceptor';
     HttpClientModule,
     AlunosModule,
     CadastroTccModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule,
+    CadastroAtaModule
   ],
   providers: [
     ProfessoresService,

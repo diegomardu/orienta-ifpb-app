@@ -1,5 +1,5 @@
 import { Aluno } from './alunos/aluno';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
@@ -23,8 +23,8 @@ export class AlunosService {
     return this.http.put<any>(`${this.apiUrl}/${aluno.id}`, aluno);
   }
 
-  litarAlunos(): Observable<Aluno[]>{
-    return this.http.get<Aluno[]>(`${this.apiUrl}`);
+  listarAlunos(): Observable<Aluno[]>{
+    return this.http.get<any>(`${this.apiUrl}`);
   }
 
   buscarAlunoPorId(id: number): Observable<Aluno>{

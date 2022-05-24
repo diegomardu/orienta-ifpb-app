@@ -22,6 +22,9 @@ export class CadastroTccFormComponent implements OnInit {
   success: boolean = false;
   errors: string[];
   id: number;
+  totalElementos = 0;
+  pagina = 0;
+  tamanho = 5;
 
   constructor(
     private alunosService: AlunosService,
@@ -35,12 +38,16 @@ export class CadastroTccFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.alunosService
-      .litarAlunos()
-      .subscribe( response => this.alunos = response );
+      .listarAlunos()
+      .subscribe( response => {
+        this.alunos = response
+      } );
 
     this.professoresService
-      .litarProfessores()
-      .subscribe( response => this.professores = response);
+    .listarProfessores()
+    .subscribe( response => {
+      this.professores = response
+    } );
 
     let params : Params = this.activatedRoute.params
     if(params && params.value && params.value.id){

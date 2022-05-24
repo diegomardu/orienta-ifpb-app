@@ -1,3 +1,5 @@
+import { CadastroTcc } from './../cadastro-tcc/cadastroTcc';
+import { CadastroTccService } from './../cadastro-tcc.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,13 +9,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  concluidos: string = '8';
-  andamento: string = '4';
-  trancado: string = '3';
+  concluidos: number = 0;
+  andamento: number = 0;
+  trancado: number = 0;
+  cadastro: CadastroTcc[] = []
+  totalElementos = 0;
+  pagina = 0;
+  tamanho = 5;
+  pageSizeOptions: number[] = [5];
 
-  constructor() { }
+  constructor(
+    private service : CadastroTccService
+    ) { }
 
   ngOnInit(): void {
+    this.service
+      .listarTrabalhosCadastrado()
+      .subscribe(response => {
+        this.cadastro = response
+        console.log("Cadastro",this.cadastro)
+        for(let cad of this.cadastro){
+          if(cad.status == 'Concluido'){
+            this.concluidos += 1;
+          }else if(cad.status == 'Em andamento'){
+            this.andamento += 1;
+          }else{
+            this.trancado += 1;
+          }
+        }
+      });
+
+
   }
 
 }

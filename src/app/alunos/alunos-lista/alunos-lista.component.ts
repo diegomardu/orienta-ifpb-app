@@ -14,6 +14,10 @@ export class AlunosListaComponent implements OnInit {
   alunoSelecionado: Aluno;
   mensagemSucesso: String;
   mensagemErro: String;
+  totalElementos = 0;
+  pagina = 0;
+  tamanho = 5;
+  pageSizeOptions: number[] = [5];
 
   constructor(
     private router: Router,
@@ -21,8 +25,7 @@ export class AlunosListaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.service.litarAlunos()
-      .subscribe(response => this.alunos = response);
+    this.listarAlunos()
   }
 
   cadastrarNovo(){
@@ -30,7 +33,7 @@ export class AlunosListaComponent implements OnInit {
   }
 
   voltarListaAlunos(){
-    this.router.navigate(['/alunos-lista'])
+    this.router.navigate(['/alunos/lista'])
   }
 
   preparaDelecao(aluno: Aluno){
@@ -47,6 +50,13 @@ export class AlunosListaComponent implements OnInit {
         },
         erro => this.mensagemErro = "Ocorreu um erro ao deletar o Aluno"
       )
+  }
+
+  listarAlunos(){
+    this.service.listarAlunos()
+      .subscribe(response => {
+        this.alunos = response;
+      });
   }
 
 }

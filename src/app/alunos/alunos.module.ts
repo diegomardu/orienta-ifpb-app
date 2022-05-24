@@ -5,6 +5,7 @@ import { AlunosRoutingModule } from './alunos-routing.module';
 import { AlunosFormComponent } from './alunos-form/alunos-form.component';
 import { FormsModule } from '@angular/forms';
 import { AlunosListaComponent } from './alunos-lista/alunos-lista.component';
+import { MatPaginatorModule } from '@angular/material/paginator'
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { AlunosListaComponent } from './alunos-lista/alunos-lista.component';
   imports: [
     CommonModule,
     AlunosRoutingModule,
-    FormsModule
+    FormsModule,
+    MatPaginatorModule
   ],
   exports:[
     AlunosFormComponent,
