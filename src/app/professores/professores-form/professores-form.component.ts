@@ -43,6 +43,7 @@ export class ProfessoresFormComponent implements OnInit {
   onSubmit(){
     if(this.id){
 
+      console.log(this.professor)
       this.service.atualizar(this.professor)
         .subscribe( response => {
           this.success = true;

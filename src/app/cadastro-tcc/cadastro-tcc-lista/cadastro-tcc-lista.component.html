@@ -28,8 +28,8 @@
         <tbody>
           <tr *ngFor="let cad of cadastro">
             <td >{{ cad.id }}</td>
-            <td >{{cad.idProfessor}}</td>
-            <td>{{ cad.idAluno }}</td>
+            <td >{{cad.orientador.nome}}</td>
+            <td>{{ cad.discente.nome }}</td>
             <td>{{cad.status}}</td>
             <td>{{cad.curso}}</td>
             <td>
@@ -39,7 +39,8 @@
               </button>
               <button class="btn btn-success ml-1"
                 routerLink="/cadastro-ata/form/{{ cad.id }}">
-                <i class="fa fa-file"></i>
+                <!--<i class="fa fa-clipboard"></i>-->
+                <i class="fa fa-handshake"></i>
               </button>
             </td>
             <!--<button class="btn btn-danger ml-1"

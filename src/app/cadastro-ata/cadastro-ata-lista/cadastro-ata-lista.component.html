@@ -1,0 +1,44 @@
+<h3 class="mt-4">Lista de Atas</h3>
+<ol class="breadcrumb mb-4">
+  <li class="breadcrumb-item active">Consulta</li>
+</ol>
+<div class="container">
+  <div class="row">
+
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-condensed table-hover">
+        <thead>
+          <tr>
+            <th>Titulo</th>
+            <th>Conteudo Ata</th>
+            <th>Data</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ataCadastro of ata">
+            <td >{{ ataCadastro.titulo }}</td>
+            <td>{{ ataCadastro.conteudo }}</td>
+            <td>{{ ataCadastro.data }}</td>
+            <td>
+              <button class="btn btn-success ml-1"
+                routerLink="/cadastro-ata/lista">
+                <i class="fa fa-file"></i>
+              </button>
+            </td>
+            <!--<button class="btn btn-danger ml-1"
+                data-toggle="modal" data-target="#modalDelecao">
+                <i class="fa fa-trash"></i>
+              </button>
+            </td>-->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+
+
+

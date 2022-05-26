@@ -1,3 +1,4 @@
+import { CadastroAtaListaComponent } from './cadastro-ata-lista/cadastro-ata-lista.component';
 import { AuthGuard } from './../auth.guard';
 import { CadastroAtaFormComponent } from './cadastro-ata-form/cadastro-ata-form.component';
 import { LayoutComponent } from './../layout/layout.component';
@@ -7,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: 'cadastro-ata', component: LayoutComponent, canActivate:[AuthGuard], children:[
     { path: 'form/:id', component: CadastroAtaFormComponent},
+    { path: 'lista', component: CadastroAtaListaComponent },
   ]}
 ];
 

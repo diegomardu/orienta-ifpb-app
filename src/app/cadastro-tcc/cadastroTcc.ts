@@ -1,3 +1,6 @@
+import { Aluno } from './../alunos/aluno';
+import { Professor } from './../professores/professor';
+
 export class CadastroTcc{
   id: number;
   cargaHoraria: String;
@@ -7,4 +10,6 @@ export class CadastroTcc{
   tipoCurso: String;
   idProfessor: String;
   idAluno: String;
+  orientador: Professor;
+  discente: Aluno;
 }

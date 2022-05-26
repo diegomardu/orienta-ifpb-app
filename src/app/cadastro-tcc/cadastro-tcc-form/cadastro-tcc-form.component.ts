@@ -65,6 +65,7 @@ export class CadastroTccFormComponent implements OnInit {
   }
 
   onSubimit(){
+    console.log(this.cadastro)
     if(this.id){
       this.service.atualizar(this.cadastro)
         .subscribe( response => {
