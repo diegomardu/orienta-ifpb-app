@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'cadastro-ata', component: LayoutComponent, canActivate:[AuthGuard], children:[
     { path: 'form/:id', component: CadastroAtaFormComponent},
     { path: 'lista', component: CadastroAtaListaComponent },
+    { path: 'lista/:id', component: CadastroAtaListaComponent }
   ]}
 ];
 

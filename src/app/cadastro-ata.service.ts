@@ -26,4 +26,8 @@ export class CadastroAtaService {
   listarAtaCadastrado(): Observable<Ata[]>{
     return this.http.get<Ata[]>(`${this.apiUrl}`)
   }
+
+  buscarTccPorId(id: number): Observable<Ata[]>{
+    return this.http.get<Ata[]>(`${this.apiUrl}/${id}`);
+  }
 }
