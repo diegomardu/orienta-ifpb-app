@@ -5,6 +5,7 @@ import { ProfessoresRoutingModule } from './professores-routing.module';
 import { ProfessoresFormComponent } from './professores-form/professores-form.component';
 import { FormsModule } from '@angular/forms';
 import { ProfessoresListaComponent } from './professores-lista/professores-lista.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ProfessoresListaComponent } from './professores-lista/professores-lista
   imports: [
     CommonModule,
     ProfessoresRoutingModule,
-    FormsModule
+    FormsModule,
+    MatPaginatorModule
   ],
   exports: [
     ProfessoresFormComponent,

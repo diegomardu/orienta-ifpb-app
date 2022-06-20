@@ -1,7 +1,9 @@
+import { Params } from '@angular/router';
+import { PaginaProfessores } from './professores/paginaProfessores';
 import { environment } from './../environments/environment';
 import { Professor } from './professores/professor';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -23,8 +25,8 @@ export class ProfessoresService {
     return this.http.put<any>(`${this.apiUrl}/${professor.id}`, professor);
   }
 
-  litarProfessores(): Observable<Professor[]>{
-    return this.http.get<Professor[]>(`${this.apiUrl}`);
+  listarProfessores(): Observable<Professor[]>{
+    return this.http.get<any>(`${this.apiUrl}`);
   }
 
   buscarProfessorPorId(id: number): Observable<Professor>{

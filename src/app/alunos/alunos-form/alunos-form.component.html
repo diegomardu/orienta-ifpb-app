@@ -1,9 +1,9 @@
-<h1 class="mt-4">Alunos</h1>
+<h3 class="mt-4">Alunos</h3>
 <ol class="breadcrumb mb-4">
   <li class="breadcrumb-item active">{{ aluno.id ? 'Edição' : 'Cadastro' }}</li>
 </ol>
 <div class="container">
-  <form #professorForm="ngForm" (ngSubmit)="onSubmit()">
+  <form #alunosForm="ngForm" (ngSubmit)="onSubmit()">
      <div class="row">
       <div class="col-md-12">
           <div class="alert alert-success" role="alert" *ngIf="success">

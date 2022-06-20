@@ -1,4 +1,4 @@
-<h1 class="mt-4">Professores</h1>
+<h3 class="mt-4">Professores</h3>
 <ol class="breadcrumb mb-4">
   <li class="breadcrumb-item active">Consulta</li>
 </ol>
@@ -30,7 +30,7 @@
             <td>{{ professor.matricula }}</td>
             <td>
               <button class="btn btn-primary"
-                routerLink="/professores-form/{{ professor.id }}">
+                routerLink="/professores/form/{{ professor.id }}">
                 <i class="fa fa-edit"></i>
               </button>
               <button class="btn btn-danger ml-1" (click)="preparaDelecao(professor)"

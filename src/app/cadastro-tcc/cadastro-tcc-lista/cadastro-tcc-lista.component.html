@@ -1,4 +1,4 @@
-<h1 class="mt-4">Lista de Orientações</h1>
+<h3 class="mt-4">Lista de Orientações</h3>
 <ol class="breadcrumb mb-4">
   <li class="breadcrumb-item active">Consulta</li>
 </ol>
@@ -26,16 +26,24 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-           <!--<td>
+          <tr *ngFor="let cad of cadastro">
+            <td >{{ cad.id }}</td>
+            <td >{{cad.orientador.nome}}</td>
+            <td>{{ cad.discente.nome }}</td>
+            <td>{{cad.status}}</td>
+            <td>{{cad.curso}}</td>
+            <td>
               <button class="btn btn-primary"
-                routerLink="/alunos-form/">
+                routerLink="/cadastro-tcc/form/{{ cad.id }}">
                 <i class="fa fa-edit"></i>
               </button>
-              <button class="btn btn-danger ml-1"
+              <button class="btn btn-success ml-1"
+                routerLink="/cadastro-ata/lista/{{ cad.id }}">
+                <!--<i class="fa fa-clipboard"></i>-->
+                <i class="fa fa-handshake"></i>
+              </button>
+            </td>
+            <!--<button class="btn btn-danger ml-1"
                 data-toggle="modal" data-target="#modalDelecao">
                 <i class="fa fa-trash"></i>
               </button>

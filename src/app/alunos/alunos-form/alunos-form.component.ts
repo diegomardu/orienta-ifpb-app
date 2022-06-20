@@ -57,13 +57,12 @@ export class AlunosFormComponent implements OnInit {
       }, errorResponse =>{
         this.success = false;
         this.errors = errorResponse.error.errors;
-      }
-       )
+      })
     }
-    }
+  }
 
   voltarListaAlunos(){
-    this.router.navigate(['/alunos-lista'])
+    this.router.navigate(['/alunos/lista'])
   }
 }
 

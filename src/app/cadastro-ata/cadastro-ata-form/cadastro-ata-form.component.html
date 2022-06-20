@@ -1,0 +1,35 @@
+<h3 class="mt-4">Gerar ata de reunião</h3>
+<!--<ol class="breadcrumb mb-4">
+  <li class="breadcrumb-item active">{{ aluno.id ? 'Edição' : 'Cadastro' }}</li>
+</ol>-->
+<div class="container">
+  <form #cadastroataForm="ngForm" (ngSubmit)="onSubimit()">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Titulo: *</label>
+          <input type="text" class="form-control" [(ngModel)]="ata.titulo" name="titulo">
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="form-group">
+          <label class="form-label">Conteudo Reunião:*</label>
+          <textarea class="form-control" rows="3" [(ngModel)]="ata.conteudo" name="conteudo"></textarea>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-4">
+        <button type="submit" class="btn btn-success">
+            <i class="fa fa-save"></i> Salvar
+        </button>
+
+        <button type="button" class="btn btn-danger ml-1" (click)="voltarListaTcc()">
+          <i class="fa fa-arrow-circle-left"></i> Voltar
+      </button>
+      </div>
+    </div>
+  </form>
+</div>
+

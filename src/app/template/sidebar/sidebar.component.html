@@ -10,29 +10,37 @@
                   Home
               </a>
               <div class="sb-sidenav-menu-heading">Cadastros</div>
-              <a class="nav-link collapsed" routerLink="/professores-lista"
+              <a class="nav-link collapsed" routerLink="/professores"
                   data-toggle="collapse" data-target="#collapseLayouts"
                   aria-expanded="false" aria-controls="collapseLayouts"
                   ><div class="sb-nav-link-icon"><i class="fas fa-chalkboard-teacher"></i></div>
                   Professores
               </a>
-              <a class="nav-link collapsed" routerLink="/alunos-lista"
+              <a class="nav-link collapsed" routerLink="/alunos"
                   data-toggle="collapse" data-target="#collapseLayouts"
                   aria-expanded="false" aria-controls="collapseLayouts"
                   ><div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i></div>
                   Alunos
               </a>
-              <a class="nav-link collapsed" routerLink="/cadastro-tcc-lista"
+              <a class="nav-link collapsed" routerLink="/cadastro-tcc"
                   data-toggle="collapse" data-target="#collapseLayouts"
                   aria-expanded="false" aria-controls="collapseLayouts"
                   ><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                   Trabalho de conclusão de curso
               </a>
+              <div class="sb-sidenav-menu-heading">Sair</div>
+              <a class="nav-link collapsed" (click)="logout()" href="#"
+                  data-toggle="collapse" data-target="#collapseLayouts"
+                  aria-expanded="false" aria-controls="collapseLayouts"
+                  ><div class="sb-nav-link-icon"><i class="fas fa-sign-out-alt"></i></div>
+                  Logout
+              </a>
           </div>
       </div>
       <div class="sb-sidenav-footer">
-          <div class="small">Logged in as:</div>
-          Start Bootstrap
+          <!--<div class="small">Usuário logado:</div>-->
+          <i class="fa fa-user mr-1"></i>
+          {{usuarioLogado}}
       </div>
   </nav>
 </div>
