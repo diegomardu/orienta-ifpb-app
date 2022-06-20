@@ -39,11 +39,6 @@ export class CadastroAtaFormComponent implements OnInit {
     console.log(this.ata)
     this.service.salvar(this.ata)
       .subscribe( response => this.ata = response)
-    this.voltarListaAta()
+      this.voltarListaTcc()
   }
-
-  voltarListaAta(){
-    this.router.navigate(['/cadastro-ata/lista'])
-  }
-
 }
