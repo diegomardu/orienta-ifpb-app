@@ -1,3 +1,4 @@
+import { AgendamentoModule } from './agendamento/agendamento.module';
 import { CadastroTccService } from './cadastro-tcc.service';
 import { AuthService } from './auth.service';
 import { AlunosService } from './alunos.service';
@@ -39,7 +40,8 @@ import { CadastroAtaModule } from './cadastro-ata/cadastro-ata.module';
     FormsModule,
     BrowserAnimationsModule,
     MatPaginatorModule,
-    CadastroAtaModule
+    CadastroAtaModule,
+    AgendamentoModule
   ],
   providers: [
     ProfessoresService,
