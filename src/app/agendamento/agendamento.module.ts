@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { AgendamentoRoutingModule } from './agendamento-routing.module';
 import { AgendamentoFormComponent } from './agendamento-form/agendamento-form.component';
@@ -11,7 +13,9 @@ import { AgendamentoFormComponent } from './agendamento-form/agendamento-form.co
   ],
   imports: [
     CommonModule,
-    AgendamentoRoutingModule
+    AgendamentoRoutingModule,
+    FormsModule,
+    MatDatepickerModule
   ]
 })
 export class AgendamentoModule { }
